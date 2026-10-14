@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gumball & Friends Streetwear | Özel Baskı T-Shirtler</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --primary: #2563eb;
+            --primary-dark: #1d4ed8;
+            --accent: #f59e0b;
+            --bg-light: #f8fafc;
+            --card-bg: #ffffff;
+            --text-dark: #0f172a;
+            --text-muted: #64748b;
+            --radius: 16px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-light);
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+
+        header {
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(10px);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .navbar {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--text-dark);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .logo span {
+            color: var(--primary);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 600;
+            transition: color 0.2s;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        .cart-btn {
+            background: var(--text-dark);
+            color: white;
+            padding: 0.6rem 1.2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: transform 0.2s, background-color 0.2s;
+        }
+
+        .cart-btn:hover {
+            background: var(--primary);
+            transform: translateY(-2px);
+        }
+
+        .hero {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 3rem 2rem;
+            background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+            border-radius: var(--radius);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 2rem;
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+
+        .hero-text {
+            max-width: 600px;
+        }
+
+        .hero-badge {
+            background: rgba(37, 99, 235, 0.2);
+            color: #60a5fa;
+            border: 1px solid rgba(96, 165, 250, 0.3);
+            padding: 6px 16px;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            display: inline-block;
+            margin-bottom: 1rem;
+        }
+
+        .hero h1 {
+            font-size: 2.8rem;
+            font-weight: 800;
+            line-height: 1.2;
+            margin-bottom: 1rem;
+        }
+
+        .hero p {
+            color: #94a3b8;
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .cta-btn {
+            display: inline-block;
+            background: var(--primary);
+            color: white;
+            padding: 0.8rem 1.8rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            transition: background 0.2s, transform 0.2s;
+        }
+
+        .cta-btn:hover {
+            background: var(--primary-dark);
+            transform: translateY(-2px);
+        }
+
+        .section-title {
+            text-align: center;
+            margin: 4rem 0 2rem;
+        }
+
+        .section-title h2 {
+            font-size: 2rem;
+            font-weight: 800;
+        }
+
+        .section-title p {
+            color: var(--text-muted);
+        }
+
+        .products-grid {
+            max-width: 1200px;
+            margin: 0 auto 4rem;
+            padding: 0 2rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .product-card {
+            background: var(--card-bg);
+            border-radius: var(--radius);
+            overflow: hidden;
+            border: 1px solid #e2e8f0;
+            transition: transform 0.3s, box-shadow 0.3s;
+            position: relative;
+        }
+
+        .product-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.08);
+        }
+
+        .image-container {
+            position: relative;
+            width: 100%;
+            height: 320px;
+            background-color: #f1f5f9;
+            overflow: hidden;
+        }
+
+        .image-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: opacity 0.4s ease, transform 0.4s ease;
+        }
+
+        .img-front {
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 1;
+        }
+
+        .img-back {
+            position: absolute;
+            top: 0;
+            left: 0;
+            opacity: 0;
+            z-index: 2;
+        }
+
+        .product-card:hover .img-back {
+            opacity: 1;
+            transform: scale(1.03);
+        }
+
+        .product-card:hover .img-front {
+            opacity: 0;
+        }
+
+        .badge-back {
+            position: absolute;
+            top: 12px;
+            right: 12px;
+            background: rgba(15, 23, 42, 0.75);
+            backdrop-filter: blur(4px);
+            color: white;
+            font-size: 0.75rem;
+            padding: 4px 10px;
+            border-radius: 20px;
+            z-index: 3;
+            pointer-events: none;
+        }
+
+        .product-info {
+            padding: 1.5rem;
+        }
+
+        .product-category {
+            font-size: 0.8rem;
+            font-weight: 700;
+            color: var(--primary);
+            text-transform: uppercase;
+            margin-bottom: 0.3rem;
+        }
+
+        .product-title {
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .product-description {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-bottom: 1rem;
+        }
+
+        .product-bottom {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .price {
+            font-size: 1.25rem;
+            font-weight: 800;
+            color: var(--text-dark);
+        }
+
+        .add-cart-btn {
+            background: #f1f5f9;
+            color: var(--text-dark);
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+
+        .add-cart-btn:hover {
+            background: var(--primary);
+            color: white;
+        }
+
+        footer {
+            background: #0f172a;
+            color: #94a3b8;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 4rem;
+            border-top: 1px solid #1e293b;
+        }
+
+        @media (max-width: 768px) {
+            .hero {
+                flex-direction: column;
+                text-align: center;
+                padding: 2rem 1.5rem;
+            }
+            .hero h1 {
+                font-size: 2rem;
+            }
+            .nav-links {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <nav class="navbar">
+            <a href="#" class="logo">
+                <i class="fa-solid fa-shirt"></i> PRINT<span>WEAR</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="#">Ana Sayfa</a></li>
+                <li><a href="#urunler">T-Shirtler</a></li>
+                <li><a href="#ozel-baski">Arka Baskılılar</a></li>
+                <li><a href="#">İletişim</a></li>
+            </ul>
+            <a href="#" class="cart-btn">
+                <i class="fa-solid fa-bag-shopping"></i> Sepet (0)
+            </a>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="hero-text">
+            <span class="hero-badge">✨ Yeni Sezon Koleksiyonu</span>
+            <h1>Sırtında Tarzını Taşı! Gumball, Tavşan & Ayıcık Baskıları</h1>
+            <p>Önü sade, arkası efsane tasarımlı %100 pamuklu oversize t-shirtler şimdi yayında.</p>
+            <a href="#urunler" class="cta-btn">Koleksiyonu Keşfet <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+    </section>
+
+    <section id="urunler">
+        <div class="section-title">
+            <h2>Özel Arka Baskılı T-Shirtler</h2>
+            <p>Resmin üzerine gelerek tişörtün arkasındaki baskıyı görebilirsin!</p>
+        </div>
+
+        <div class="products-grid">
+
+            <div class="product-card">
+                <div class="image-container">
+                    <span class="badge-back"><i class="fa-solid fa-rotate"></i> Arkasını Gör</span>
+                    <img class="img-front" src="https://images.unsplash.com/photo-1521572267360-ee0c2909d518?w=600&auto=format&fit=crop" alt="T-Shirt Ön">
+                    <img class="img-back" src="https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?w=600&auto=format&fit=crop" alt="T-Shirt Arka Gumball">
+                </div>
+                <div class="product-info">
+                    <div class="product-category">Oversize T-Shirt</div>
+                    <h3 class="product-title">Gumball & Darwin Arka Baskılı T-Shirt</h3>
+                    <p class="product-description">Siyah %100 pamuk, sırtında HD kalitede Gumball karakter baskısı.</p>
+                    <div class="product-bottom">
+                        <span class="price">499,90 TL</span>
+                        <button class="add-cart-btn">Sepete Ekle</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="image-container">
+                    <span class="badge-back"><i class="fa-solid fa-rotate"></i> Arkasını Gör</span>
+                    <img class="img-front" src="https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?w=600&auto=format&fit=crop" alt="T-Shirt Ön">
+                    <img class="img-back" src="https://images.unsplash.com/photo-1576995853123-5a10305d93c0?w=600&auto=format&fit=crop" alt="T-Shirt Arka Tavşan">
+                </div>
+                <div class="product-info">
+                    <div class="product-category">Streetwear</div>
+                    <h3 class="product-title">Anime Tavşan (Bunny) Arka Baskılı T-Shirt</h3>
+                    <p class="product-description">Krem renkli rahat kesim, sırt detaylı özel grafik çizim.</p>
+                    <div class="product-bottom">
+                        <span class="price">449,90 TL</span>
+                        <button class="add-cart-btn">Sepete Ekle</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="image-container">
+                    <span class="badge-back"><i class="fa-solid fa-rotate"></i> Arkasını Gör</span>
+                    <img class="img-front" src="https://images.unsplash.com/photo-1618354691373-d851c5c3a990?w=600&auto=format&fit=crop" alt="T-Shirt Ön">
+                    <img class="img-back" src="https://images.unsplash.com/photo-1562157873-818bc0726f68?w=600&auto=format&fit=crop" alt="T-Shirt Arka Ayıcık">
+                </div>
+                <div class="product-info">
+                    <div class="product-category">Premium Koleksiyon</div>
+                    <h3 class="product-title">Teddy Bear (Ayıcık) Arka Baskılı T-Shirt</h3>
+                    <p class="product-description">Beyaz unisex kesim, sırt bölgesinde sevimli ayıcık nakış/baskı.</p>
+                    <div class="product-bottom">
+                        <span class="price">479,90 TL</span>
+                        <button class="add-cart-btn">Sepete Ekle</button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 PrintWear Clothing. Tüm hakları saklıdır. GitHub Pages ile yayınlanmıştır.</p>
+    </footer>
+
+</body>
+</html>
